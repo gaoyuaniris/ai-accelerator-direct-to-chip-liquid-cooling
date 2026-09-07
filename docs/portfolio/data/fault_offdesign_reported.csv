@@ -1,0 +1,7 @@
+scenario,total_flow_Lmin,min_branch_flow_Lmin,maldistribution_percent,Tmax_device_est_C,thermal_margin_to_85C_C,reported_status,Tin_C,total_heat_W,pump_shutoff_pressure_kPa_assumed,branch8_resistance_multiplier,thermal_evidence,result_source,configuration_source,data_basis
+Nominal,9.1604,1.1438,0.342,72.72,12.28,PASS,30,6000,20,1,within_sampled_temperature_basis,E01,E10,transcribed_reported_results_not_raw_export
+Hot coolant,9.1604,1.1438,0.342,77.72,7.28,PASS,35,6000,20,1,inlet_temperature_sensitivity_only,E01,E10,transcribed_reported_results_not_raw_export
+Uneven power,9.1604,1.1438,0.342,72.72,12.28,PASS,30,4950,20,1,within_sampled_temperature_basis,E01,E10,transcribed_reported_results_not_raw_export
+Restricted branch,9.0632,0.9534,18.323,75.05,9.95,FAIL - maldistribution,30,6000,20,1.3,within_sampled_temperature_basis,E01,E10,transcribed_reported_results_not_raw_export
+Weak pump,8.2056,1.0246,0.333,74.1,10.9,FAIL - flow target,30,6000,15,1,within_sampled_temperature_basis,E01,E10,transcribed_reported_results_not_raw_export
+Combined stress,8.1016,0.8499,18.575,81.67,3.33,FAIL - flow and maldistribution,35,4950,15,1.3,inlet_temperature_sensitivity_only,E01,E10,transcribed_reported_results_not_raw_export

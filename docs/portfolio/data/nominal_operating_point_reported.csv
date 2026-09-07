@@ -1,0 +1,2 @@
+N_accelerators,heat_W_per_device,total_heat_kW,total_flow_Lmin,tray_dp_kPa,mean_branch_flow_Lmin,min_branch_flow_Lmin,max_branch_flow_Lmin,Mflow_percent,hydraulic_power_W,electrical_pump_power_W_est,efficiency_assumed,flow_margin_percent_reported,Tmax_device_est_C,temperature_margin_C,hydraulic_source,temperature_source,boundary_note
+8,750,6,9.1604,11.4374,1.1451,1.1438,1.1477,0.342,1.7462,3.4924,0.5,6.02,72.72,12.28,E02,E01,tray S1-R1 only; illustrative pump; excludes common upstream/downstream loop losses

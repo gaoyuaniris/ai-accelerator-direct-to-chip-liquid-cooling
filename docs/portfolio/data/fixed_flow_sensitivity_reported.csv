@@ -1,0 +1,4 @@
+K_local,Mflow_percent,q_min_Lmin,q_max_Lmin,Tmax_device_est_C,Tspread_C,thermal_margin_C,total_flow_Lmin,rom_in_range_branches,result_source
+0,0.346615,1.078817,1.08256,73.443085,0.043362,11.556915,8.64,8,E05
+1,4.261041,1.066133,1.112153,73.591841,0.526503,11.408159,8.64,8,E05
+2,8.039091,1.053891,1.140713,73.738185,0.982132,11.261815,8.64,8,E05
