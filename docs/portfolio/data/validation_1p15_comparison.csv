@@ -1,0 +1,6 @@
+metric,unit,COMSOL_reported,ROM_recalculated_from_reported_coefficients,signed_difference,relative_error_percent,CFD_source,ROM_source,note
+pressure_drop,kPa,11.258,11.260002213638117,0.0020022136381179223,0.017784807586762597,E03,E10; output cross-check E04,"Algebraic reconstruction, not an independent solver or CFD rerun."
+Rth_max_meanbulk,K/W,0.0255542,0.0256179006332701,6.370063327009942e-05,0.2492765700749855,E03,E10; output cross-check E04,"Algebraic reconstruction, not an independent solver or CFD rerun."
+outlet_temperature,C,39.408,39.38951658386852,-0.01848341613148108,,E03,E10; output cross-check E04,"Algebraic reconstruction, not an independent solver or CFD rerun."
+maximum_base_temperature,C,53.87,53.908183766886836,0.038183766886838555,,E03,E10; output cross-check E04,"Algebraic reconstruction, not an independent solver or CFD rerun."
+hydraulic_power,W,0.21578,0.21581670909473058,3.670909473058037e-05,0.017012278584949136,E03,E10; output cross-check E04,"Algebraic reconstruction, not an independent solver or CFD rerun."
