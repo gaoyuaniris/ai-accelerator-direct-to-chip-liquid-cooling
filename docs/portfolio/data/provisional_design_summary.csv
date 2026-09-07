@@ -1,0 +1,23 @@
+parameter,value,unit,status,source_id
+accelerators,8,count,model configuration,E10
+design_power_per_accelerator,750,W,model configuration,E10
+total_design_load,6,kW,derived: 8 x 750 W,E10
+coldplate,Candidate C,name,selected CFD concept,E10
+channel_count,30,count,model geometry; not final CAD inspection,E10
+channel_width,0.4,mm,model input,E10
+channel_height,1.0,mm,model input,E10
+channel_length,50,mm,model input,E10
+header_ID,19.05,mm,provisional choice,E10
+branch_tube_ID,9.5,mm,model assumption,E10
+supply_tube_length,0.3,m,model assumption,E10
+return_tube_length,0.3,m,model assumption,E10
+interbranch_segment_length,0.05,m,"numerical length, not mechanically verified spacing",E10
+nominal_Tin,30,C,CFD reference,E10
+R_TIM,0.005,K/W,illustrative lumped thermal path,E10
+R_package,0.02,K/W,illustrative lumped thermal path,E10
+Tdevice_limit,85,C,project criterion,E10
+Mflow_limit,10,percent,project criterion,E10
+fixed_total_flow_target,8.64,L/min,project criterion,E10
+operating_flow,9.1604,L/min,reported model result,E02
+tray_pressure_drop,11.4374,kPa,S1-R1 model boundary only,E02
+Tmax_device_est,72.72,C,reported model result,E01

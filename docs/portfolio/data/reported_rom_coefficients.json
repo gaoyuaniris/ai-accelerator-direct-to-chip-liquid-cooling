@@ -1,0 +1,14 @@
+{
+  "flow_reference_Lmin": 1.0,
+  "dp_linear_kPa": 6.275834320181083,
+  "dp_quadratic_kPa": 3.0569321326501875,
+  "Rth_coefficient_K_W": 0.027023939579912205,
+  "Rth_exponent": 0.38230560298064653,
+  "flow_min_Lmin": 0.5,
+  "flow_max_Lmin": 1.2,
+  "heat_load_sampled_min_W": 450,
+  "heat_load_sampled_max_W": 750,
+  "inlet_temperature_calibration_C": 30,
+  "source": "E10; E11",
+  "status": "documentary_record_not_a_replacement_for_live_component_module"
+}

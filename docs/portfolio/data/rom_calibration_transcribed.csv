@@ -1,0 +1,8 @@
+flow_Lmin,heat_load_W,Tin_C,dp_kPa,Rth_max_meanbulk_K_W,source,precision_note
+0.5,750,30,3.894,0.03512,E10,values used in reported fit; original full precision export unavailable
+0.6,750,30,4.864,0.03286,E10,values used in reported fit; original full precision export unavailable
+0.65,750,30,5.371,0.03192,E10,values used in reported fit; original full precision export unavailable
+0.8,750,30,6.983,0.02955,E10,values used in reported fit; original full precision export unavailable
+0.95,750,30,8.727,0.02765,E10,values used in reported fit; original full precision export unavailable
+1.1,750,30,10.604,0.026,E10,legacy rounded fit input; detailed earlier screenshot reports 0.0260393 K/W
+1.2,750,30,11.927,0.0250856,E06,values used in reported fit; original full precision export unavailable
