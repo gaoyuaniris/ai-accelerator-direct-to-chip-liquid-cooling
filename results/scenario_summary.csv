@@ -1,0 +1,4 @@
+scenario_id,total_heat_w,prescribed_total_flow_lpm,minimum_branch_outlet_c,maximum_branch_outlet_c
+uniform,4800.0,6.910684,40.000,40.000
+nonuniform,4800.0,6.910684,37.500,42.500
+restricted_branch,4800.0,6.478766,40.000,50.000
