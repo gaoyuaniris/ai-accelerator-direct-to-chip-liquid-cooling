@@ -1,27 +1,30 @@
-# Project 2 — Direct-to-chip liquid cooling
-# Thermal-Hydraulic Co-Design of an AI Accelerator Cooling Tray
+# Thermal–Hydraulic Co-Design of an AI Accelerator Cooling Tray
 
-**Yuan Gao · Selected engineering portfolio project · Python / COMSOL / liquid cooling**
+**8-accelerator · 6 kW direct-to-chip liquid cooling · Python / COMSOL / reduced-order modeling**
 
-[Portfolio overview](docs/portfolio/README.md) · [Package contents](docs/portfolio/START_HERE.md) · [Repository validation](docs/portfolio/docs/REPOSITORY_INTEGRATION.md)
+A system-level thermal–hydraulic design study connecting **cold-plate CFD**, component reduced-order models, nonlinear manifold hydraulics, and an illustrative pump curve to predict branch flow, pressure drop, and device thermal margin.
 
-A model-based design study of an **8-accelerator, 6 kW direct-to-chip liquid-cooling tray**, connecting cold-plate CFD to component reduced-order models, nonlinear manifold hydraulics, a representative pump curve, and fault-response analysis.
-
-**Central finding:** hydraulic operating requirements can be violated before the estimated device temperature reaches its limit. A 30% branch-resistance increase produced **18.32% flow maldistribution** while peak device temperature remained **75.05°C**, below the project's 85°C limit. [E01](docs/portfolio/evidence/fault_results_reported.png)
+**Key engineering finding:** a modeled 30% increase in one branch hydraulic resistance increased flow maldistribution from approximately **0.34% to 18.32%**, violating the project's 10% flow-uniformity criterion while the estimated peak device temperature remained **75.05°C**, below the **85°C** project limit.
 
 ## Read in two minutes
 
 | Nominal modeled result | Value |
 |---|---:|
-| Thermal design load | 8 × 750 W = **6.0 kW** |
-| Pump/tray operating flow | **9.1604 L/min** |
+| Thermal design load | **8 × 750 W = 6.0 kW** |
+| Illustrative pump–tray operating flow | **9.1604 L/min** |
 | Tray differential pressure, S1 to R1 | **11.4374 kPa** |
 | Minimum / maximum branch flow | **1.1438 / 1.1477 L/min** |
 | Flow maldistribution | **0.342%** |
 | Estimated peak device temperature | **72.72°C** |
-| Margin to the 85°C project limit | **12.28°C** |
+| Margin to 85°C project criterion | **12.28°C** |
+
+[Portfolio overview](docs/portfolio/README.md) · [Validation notes](docs/portfolio/docs/VALIDATION_NOTES.md) · [Repository validation](docs/portfolio/docs/REPOSITORY_INTEGRATION.md)
 
 The operating point is a **prediction for an illustrative pump coupled to the modeled tray**, not a measured pump/CDU qualification result. Sources: [E01](docs/portfolio/evidence/fault_results_reported.png), [E02](docs/portfolio/evidence/nominal_operating_point_reported.png). The [two-page case study](docs/portfolio/portfolio/Project2_Case_Study.pdf) provides the short narrative; [validation notes](docs/portfolio/docs/VALIDATION_AND_LIMITATIONS.md) explain the evidence boundaries.
+
+## System architecture
+
+![8-accelerator direct-to-chip liquid-cooling tray architecture](...)
 
 ## 1. Engineering question and scope
 
