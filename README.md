@@ -136,7 +136,7 @@ Hydraulic power is **1.7462 W**; at an assumed **50% efficiency**, estimated ele
 ## Review the evidence and run the checks
 
 - [Two-page case study](docs/portfolio/portfolio/Project2_Case_Study.pdf) — concise engineering narrative.
-- [Portfolio details](docs/portfolio/README.md), [validation and limitations](docs/portfolio/docs/VALIDATION_AND_LIMITATIONS.md), and [source index](docs/portfolio/data/source_manifest.csv) — assumptions, reported data, and evidence traceability.
+- [Portfolio details](docs/portfolio/README.md), [validation and limitations](docs/portfolio/docs/VALIDATION_AND_LIMITATIONS.md) — assumptions, reported data, and evidence traceability.
 - [Component ROM](component_rom/coldplate_rom.py), [manifold solver](network_solver/network_model/n_branch_manifold.py), and [fault analysis](network_solver/network_model/fault_offdesign_analysis.py) — implementation.
 - [Repository verification](docs/portfolio/docs/REPOSITORY_INTEGRATION.md) — test scope, data consistency, and unresolved discrepancies.
 
@@ -146,5 +146,3 @@ From the repository root, in a Python environment with the model and test depend
 python -B -m pytest -p no:cacheprovider tests/
 python -B docs/portfolio/scripts/check_package.py
 ```
-
-The available suite covers branch hydraulics, the cold-plate ROM, and the earlier Day 1 energy balance. The package checker verifies documentation links, tables, and arithmetic. These checks do not rerun COMSOL or validate a complete tray against hardware.
