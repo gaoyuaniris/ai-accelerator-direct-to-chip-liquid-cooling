@@ -24,7 +24,7 @@ The operating point is a **prediction for an illustrative pump coupled to the mo
 
 ## System architecture
 
-![8-accelerator direct-to-chip liquid-cooling tray architecture](...)
+![8-accelerator direct-to-chip liquid-cooling tray architecture](figures/system_architecture.svg)
 
 ## 1. Engineering question and scope
 
