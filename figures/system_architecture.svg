@@ -1,45 +1,428 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
-  <title id="title">Eight-accelerator direct-to-chip cooling architecture</title>
-  <desc id="desc">The CDU supplies 30 degree Celsius TCS water to a tray supply manifold, eight parallel accelerator cold plates, and a return manifold.</desc>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200"
+     height="650"
+     viewBox="0 0 1200 650"
+     role="img"
+     aria-labelledby="title desc">
+
+  <title id="title">
+    Eight-accelerator direct-to-chip liquid-cooling architecture
+  </title>
+
+  <desc id="desc">
+    An illustrative pump supplies 30 degree Celsius water to an
+    eight-accelerator liquid-cooled compute tray with parallel cold-plate
+    branches, a supply manifold, and a return manifold. The modeled thermal
+    design load is 6.0 kilowatts.
+  </desc>
+
   <defs>
-    <marker id="blue-arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3z" fill="#1677b8"/></marker>
-    <marker id="orange-arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3z" fill="#c45b17"/></marker>
+
+    <marker id="blue-arrow"
+            markerWidth="10"
+            markerHeight="10"
+            refX="9"
+            refY="3"
+            orient="auto">
+      <path d="M0,0 L0,6 L9,3z" fill="#1677b8"/>
+    </marker>
+
+    <marker id="orange-arrow"
+            markerWidth="10"
+            markerHeight="10"
+            refX="9"
+            refY="3"
+            orient="auto">
+      <path d="M0,0 L0,6 L9,3z" fill="#c45b17"/>
+    </marker>
+
     <style>
-      text{font-family:Arial,sans-serif;fill:#172033}.title{font-size:28px;font-weight:700}.section{font-size:17px;font-weight:700}.label{font-size:14px;font-weight:700}.small{font-size:12px;fill:#526075}.boundary{fill:#f7f9fc;stroke:#8391a3;stroke-width:2;stroke-dasharray:8 6}.tray{fill:#fff;stroke:#53657c;stroke-width:2}.supplyBox{fill:#e8f5fd;stroke:#1677b8;stroke-width:2}.returnBox{fill:#fff1e8;stroke:#c45b17;stroke-width:2}.branch{fill:#fbfcfe;stroke:#6e7d90;stroke-width:1.5}.supply{fill:none;stroke:#1677b8;stroke-width:3;marker-end:url(#blue-arrow)}.return{fill:none;stroke:#c45b17;stroke-width:3;marker-end:url(#orange-arrow)}
+      text {
+        font-family: Arial, sans-serif;
+        fill: #172033;
+      }
+
+      .title {
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .section {
+        font-size: 17px;
+        font-weight: 700;
+      }
+
+      .label {
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .small {
+        font-size: 12px;
+        fill: #526075;
+      }
+
+      .tiny {
+        font-size: 11px;
+        fill: #526075;
+      }
+
+      .boundary {
+        fill: #f7f9fc;
+        stroke: #8391a3;
+        stroke-width: 2;
+        stroke-dasharray: 8 6;
+      }
+
+      .tray {
+        fill: #ffffff;
+        stroke: #53657c;
+        stroke-width: 2;
+      }
+
+      .supplyBox {
+        fill: #e8f5fd;
+        stroke: #1677b8;
+        stroke-width: 2;
+      }
+
+      .returnBox {
+        fill: #fff1e8;
+        stroke: #c45b17;
+        stroke-width: 2;
+      }
+
+      .branch {
+        fill: #fbfcfe;
+        stroke: #6e7d90;
+        stroke-width: 1.5;
+      }
+
+      .supply {
+        fill: none;
+        stroke: #1677b8;
+        stroke-width: 3;
+        marker-end: url(#blue-arrow);
+      }
+
+      .return {
+        fill: none;
+        stroke: #c45b17;
+        stroke-width: 3;
+        marker-end: url(#orange-arrow);
+      }
     </style>
+
   </defs>
-  <rect width="1200" height="650" fill="#fff"/>
-  <text x="40" y="48" class="title">8-accelerator direct-to-chip liquid cooling</text>
-  <text x="40" y="75" class="small">Day 1 system boundary • 4.8 kW • water • eight parallel branches</text>
-  <rect x="35" y="105" width="245" height="490" rx="14" class="boundary"/>
-  <text x="55" y="137" class="section">RACK / CDU BOUNDARY</text>
-  <rect x="70" y="180" width="175" height="88" rx="9" class="supplyBox"/>
-  <text x="157" y="212" text-anchor="middle" class="label">CDU + TCS pump</text>
-  <text x="157" y="237" text-anchor="middle" class="small">FWS side outside tray model</text>
-  <rect x="70" y="330" width="175" height="70" rx="9" class="supplyBox"/>
-  <text x="157" y="359" text-anchor="middle" class="label">Supply rack drop + QD</text>
-  <text x="157" y="382" text-anchor="middle" class="small">TCS supply: 30°C</text>
-  <rect x="70" y="475" width="175" height="70" rx="9" class="returnBox"/>
-  <text x="157" y="504" text-anchor="middle" class="label">Return rack drop + QD</text>
-  <text x="157" y="527" text-anchor="middle" class="small">Target mixed return: 40°C</text>
-  <path d="M157 268 V330" class="supply"/><path d="M245 510 H267 V225 H245" class="return"/>
-  <rect x="320" y="105" width="845" height="490" rx="14" class="tray"/>
-  <text x="345" y="137" class="section">8-ACCELERATOR COMPUTE TRAY — TCS LOOP</text>
-  <rect x="360" y="170" width="765" height="60" rx="8" class="supplyBox"/>
-  <text x="742" y="197" text-anchor="middle" class="label">SUPPLY MANIFOLD</text>
-  <text x="742" y="217" text-anchor="middle" class="small">30°C • 6.911 L/min total baseline</text>
-  <path d="M245 365 H310 V200 H360" class="supply"/>
-  <rect x="360" y="505" width="765" height="60" rx="8" class="returnBox"/>
-  <text x="742" y="532" text-anchor="middle" class="label">RETURN MANIFOLD</text>
-  <text x="742" y="552" text-anchor="middle" class="small">Target mixed return: 40°C</text>
-  <path d="M360 535 H300 V510 H245" class="return"/>
+
+
+  <!-- Background -->
+
+  <rect width="1200"
+        height="650"
+        fill="#ffffff"/>
+
+
+  <!-- Main title -->
+
+  <text x="40"
+        y="48"
+        class="title">
+    8-accelerator direct-to-chip liquid cooling
+  </text>
+
+  <text x="40"
+        y="75"
+        class="small">
+    6.0 kW modeled tray • water • eight parallel cold-plate branches
+  </text>
+
+
+  <!-- External pump / rack boundary -->
+
+  <rect x="35"
+        y="105"
+        width="245"
+        height="490"
+        rx="14"
+        class="boundary"/>
+
+  <text x="55"
+        y="137"
+        class="section">
+    PUMP / RACK BOUNDARY
+  </text>
+
+
+  <!-- Illustrative pump -->
+
+  <rect x="70"
+        y="180"
+        width="175"
+        height="88"
+        rx="9"
+        class="supplyBox"/>
+
+  <text x="157"
+        y="212"
+        text-anchor="middle"
+        class="label">
+    Illustrative pump curve
+  </text>
+
+  <text x="157"
+        y="237"
+        text-anchor="middle"
+        class="small">
+    Operating-point model
+  </text>
+
+
+  <!-- Supply connection -->
+
+  <rect x="70"
+        y="330"
+        width="175"
+        height="70"
+        rx="9"
+        class="supplyBox"/>
+
+  <text x="157"
+        y="359"
+        text-anchor="middle"
+        class="label">
+    Coolant supply
+  </text>
+
+  <text x="157"
+        y="382"
+        text-anchor="middle"
+        class="small">
+    Tray inlet: 30°C
+  </text>
+
+
+  <!-- Return connection -->
+
+  <rect x="70"
+        y="475"
+        width="175"
+        height="70"
+        rx="9"
+        class="returnBox"/>
+
+  <text x="157"
+        y="504"
+        text-anchor="middle"
+        class="label">
+    Coolant return
+  </text>
+
+  <text x="157"
+        y="527"
+        text-anchor="middle"
+        class="small">
+    Mixed tray return
+  </text>
+
+
+  <!-- External flow paths -->
+
+  <path d="M157 268 V330"
+        class="supply"/>
+
+  <path d="M245 510 H267 V225 H245"
+        class="return"/>
+
+
+  <!-- Modeled compute tray -->
+
+  <rect x="320"
+        y="105"
+        width="845"
+        height="490"
+        rx="14"
+        class="tray"/>
+
+  <text x="345"
+        y="137"
+        class="section">
+    8-ACCELERATOR COMPUTE TRAY — MODELED DOMAIN
+  </text>
+
+
+  <!-- Supply manifold -->
+
+  <rect x="360"
+        y="170"
+        width="765"
+        height="60"
+        rx="8"
+        class="supplyBox"/>
+
+  <text x="742"
+        y="196"
+        text-anchor="middle"
+        class="label">
+    SUPPLY MANIFOLD
+  </text>
+
+  <text x="742"
+        y="216"
+        text-anchor="middle"
+        class="small">
+    30°C inlet • 9.1604 L/min nominal operating flow • 19.05 mm provisional header ID
+  </text>
+
+  <path d="M245 365 H310 V200 H360"
+        class="supply"/>
+
+
+  <!-- Nominal branch-flow range -->
+
+  <text x="742"
+        y="258"
+        text-anchor="middle"
+        class="small">
+    Nominal branch-flow range: 1.1438–1.1477 L/min
+  </text>
+
+
+  <!-- Return manifold -->
+
+  <rect x="360"
+        y="505"
+        width="765"
+        height="60"
+        rx="8"
+        class="returnBox"/>
+
+  <text x="742"
+        y="532"
+        text-anchor="middle"
+        class="label">
+    RETURN MANIFOLD
+  </text>
+
+  <text x="742"
+        y="552"
+        text-anchor="middle"
+        class="small">
+    Mixed coolant return
+  </text>
+
+  <path d="M360 535 H300 V510 H245"
+        class="return"/>
+
+
+  <!-- Eight parallel accelerator branches -->
+
   <g>
-    <rect x="367" y="285" width="82" height="145" rx="8" class="branch"/><rect x="462" y="285" width="82" height="145" rx="8" class="branch"/><rect x="557" y="285" width="82" height="145" rx="8" class="branch"/><rect x="652" y="285" width="82" height="145" rx="8" class="branch"/><rect x="747" y="285" width="82" height="145" rx="8" class="branch"/><rect x="842" y="285" width="82" height="145" rx="8" class="branch"/><rect x="937" y="285" width="82" height="145" rx="8" class="branch"/><rect x="1032" y="285" width="82" height="145" rx="8" class="branch"/>
-    <text x="408" y="313" text-anchor="middle" class="label">Branch 1</text><text x="503" y="313" text-anchor="middle" class="label">Branch 2</text><text x="598" y="313" text-anchor="middle" class="label">Branch 3</text><text x="693" y="313" text-anchor="middle" class="label">Branch 4</text><text x="788" y="313" text-anchor="middle" class="label">Branch 5</text><text x="883" y="313" text-anchor="middle" class="label">Branch 6</text><text x="978" y="313" text-anchor="middle" class="label">Branch 7</text><text x="1073" y="313" text-anchor="middle" class="label">Branch 8</text>
-    <text x="408" y="349" text-anchor="middle" class="small">Cold plate</text><text x="503" y="349" text-anchor="middle" class="small">Cold plate</text><text x="598" y="349" text-anchor="middle" class="small">Cold plate</text><text x="693" y="349" text-anchor="middle" class="small">Cold plate</text><text x="788" y="349" text-anchor="middle" class="small">Cold plate</text><text x="883" y="349" text-anchor="middle" class="small">Cold plate</text><text x="978" y="349" text-anchor="middle" class="small">Cold plate</text><text x="1073" y="349" text-anchor="middle" class="small">Cold plate</text>
-    <text x="408" y="378" text-anchor="middle" class="small">600 W</text><text x="503" y="378" text-anchor="middle" class="small">600 W</text><text x="598" y="378" text-anchor="middle" class="small">600 W</text><text x="693" y="378" text-anchor="middle" class="small">600 W</text><text x="788" y="378" text-anchor="middle" class="small">600 W</text><text x="883" y="378" text-anchor="middle" class="small">600 W</text><text x="978" y="378" text-anchor="middle" class="small">600 W</text><text x="1073" y="378" text-anchor="middle" class="small">600 W</text>
-    <text x="408" y="405" text-anchor="middle" class="small">0.864 L/min*</text><text x="503" y="405" text-anchor="middle" class="small">0.864 L/min*</text><text x="598" y="405" text-anchor="middle" class="small">0.864 L/min*</text><text x="693" y="405" text-anchor="middle" class="small">0.864 L/min*</text><text x="788" y="405" text-anchor="middle" class="small">0.864 L/min*</text><text x="883" y="405" text-anchor="middle" class="small">0.864 L/min*</text><text x="978" y="405" text-anchor="middle" class="small">0.864 L/min*</text><text x="1073" y="405" text-anchor="middle" class="small">0.864 L/min*</text>
-    <path d="M408 230 V280 M503 230 V280 M598 230 V280 M693 230 V280 M788 230 V280 M883 230 V280 M978 230 V280 M1073 230 V280" class="supply"/><path d="M408 430 V500 M503 430 V500 M598 430 V500 M693 430 V500 M788 430 V500 M883 430 V500 M978 430 V500 M1073 430 V500" class="return"/>
+
+    <!-- Branch boxes -->
+
+    <rect x="367" y="285" width="82" height="145" rx="8" class="branch"/>
+    <rect x="462" y="285" width="82" height="145" rx="8" class="branch"/>
+    <rect x="557" y="285" width="82" height="145" rx="8" class="branch"/>
+    <rect x="652" y="285" width="82" height="145" rx="8" class="branch"/>
+    <rect x="747" y="285" width="82" height="145" rx="8" class="branch"/>
+    <rect x="842" y="285" width="82" height="145" rx="8" class="branch"/>
+    <rect x="937" y="285" width="82" height="145" rx="8" class="branch"/>
+    <rect x="1032" y="285" width="82" height="145" rx="8" class="branch"/>
+
+
+    <!-- Branch labels -->
+
+    <text x="408"  y="313" text-anchor="middle" class="label">Branch 1</text>
+    <text x="503"  y="313" text-anchor="middle" class="label">Branch 2</text>
+    <text x="598"  y="313" text-anchor="middle" class="label">Branch 3</text>
+    <text x="693"  y="313" text-anchor="middle" class="label">Branch 4</text>
+    <text x="788"  y="313" text-anchor="middle" class="label">Branch 5</text>
+    <text x="883"  y="313" text-anchor="middle" class="label">Branch 6</text>
+    <text x="978"  y="313" text-anchor="middle" class="label">Branch 7</text>
+    <text x="1073" y="313" text-anchor="middle" class="label">Branch 8</text>
+
+
+    <!-- Cold-plate labels -->
+
+    <text x="408"  y="349" text-anchor="middle" class="small">Cold plate</text>
+    <text x="503"  y="349" text-anchor="middle" class="small">Cold plate</text>
+    <text x="598"  y="349" text-anchor="middle" class="small">Cold plate</text>
+    <text x="693"  y="349" text-anchor="middle" class="small">Cold plate</text>
+    <text x="788"  y="349" text-anchor="middle" class="small">Cold plate</text>
+    <text x="883"  y="349" text-anchor="middle" class="small">Cold plate</text>
+    <text x="978"  y="349" text-anchor="middle" class="small">Cold plate</text>
+    <text x="1073" y="349" text-anchor="middle" class="small">Cold plate</text>
+
+
+    <!-- Accelerator thermal load -->
+
+    <text x="408"  y="378" text-anchor="middle" class="small">750 W</text>
+    <text x="503"  y="378" text-anchor="middle" class="small">750 W</text>
+    <text x="598"  y="378" text-anchor="middle" class="small">750 W</text>
+    <text x="693"  y="378" text-anchor="middle" class="small">750 W</text>
+    <text x="788"  y="378" text-anchor="middle" class="small">750 W</text>
+    <text x="883"  y="378" text-anchor="middle" class="small">750 W</text>
+    <text x="978"  y="378" text-anchor="middle" class="small">750 W</text>
+    <text x="1073" y="378" text-anchor="middle" class="small">750 W</text>
+
+
+    <!-- Approximate nominal branch flow -->
+
+    <text x="408"  y="405" text-anchor="middle" class="tiny">≈1.145 L/min</text>
+    <text x="503"  y="405" text-anchor="middle" class="tiny">≈1.145 L/min</text>
+    <text x="598"  y="405" text-anchor="middle" class="tiny">≈1.145 L/min</text>
+    <text x="693"  y="405" text-anchor="middle" class="tiny">≈1.145 L/min</text>
+    <text x="788"  y="405" text-anchor="middle" class="tiny">≈1.145 L/min</text>
+    <text x="883"  y="405" text-anchor="middle" class="tiny">≈1.145 L/min</text>
+    <text x="978"  y="405" text-anchor="middle" class="tiny">≈1.145 L/min</text>
+    <text x="1073" y="405" text-anchor="middle" class="tiny">≈1.145 L/min</text>
+
+
+    <!-- Supply branch connections -->
+
+    <path d="
+      M408 230 V280
+      M503 230 V280
+      M598 230 V280
+      M693 230 V280
+      M788 230 V280
+      M883 230 V280
+      M978 230 V280
+      M1073 230 V280"
+      class="supply"/>
+
+
+    <!-- Return branch connections -->
+
+    <path d="
+      M408 430 V500
+      M503 430 V500
+      M598 430 V500
+      M693 430 V500
+      M788 430 V500
+      M883 430 V500
+      M978 430 V500
+      M1073 430 V500"
+      class="return"/>
+
   </g>
-  <text x="1125" y="583" text-anchor="end" class="small">* Ideal equal-flow reference; hydraulic balance not yet solved</text>
+
+
+  <!-- Engineering interpretation -->
+
+  <text x="1125"
+        y="583"
+        text-anchor="end"
+        class="small">
+    Nominal operating point from the coupled eight-branch hydraulic model
+  </text>
+
+  <text x="1125"
+        y="602"
+        text-anchor="end"
+        class="tiny">
+    Illustrative pump curve; not a hardware-qualified pump/CDU result
+  </text>
+
 </svg>
