@@ -409,20 +409,6 @@
   </g>
 
 
-  <!-- Engineering interpretation -->
 
-  <text x="1125"
-        y="583"
-        text-anchor="end"
-        class="small">
-    Nominal operating point from the coupled eight-branch hydraulic model
-  </text>
-
-  <text x="1125"
-        y="602"
-        text-anchor="end"
-        class="tiny">
-    Illustrative pump curve; not a hardware-qualified pump/CDU result
-  </text>
 
 </svg>
