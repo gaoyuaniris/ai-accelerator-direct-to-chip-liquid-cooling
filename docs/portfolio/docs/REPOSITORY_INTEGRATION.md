@@ -1,6 +1,6 @@
-# Repository integration and verification — 2026-09-07
+# Repository integration and verification 
 
-## Bundle completeness follow-up — 2026-09-07
+## Bundle completeness follow-up 
 
 The follow-up documentation branch is based on the newer `main` commit `1a2a6a3a0dcac2b7d38413fc3dc88379837929e8`. It preserves that expanded root README with corrected package-relative links, the repository-level check command, and source/validation context. The historical Day 1 README preservation described below applies to the original documentation commit `1f455218b8cd628fa344637f55ba1f99836c1715`; the owner subsequently replaced the root README on `main`.
 
