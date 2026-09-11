@@ -1,6 +1,6 @@
 # Thermal-Hydraulic Co-Design of an AI Accelerator Cooling Tray
 
-**Yuan Gao · Selected engineering portfolio project · Python / COMSOL / liquid cooling**
+**Yuan Gao · Model-based thermal-hydraulic study · Python / COMSOL / liquid cooling**
 
 A model-based design study of an **8-accelerator, 6 kW direct-to-chip liquid-cooling tray**, connecting cold-plate CFD to component reduced-order models, nonlinear manifold hydraulics, a representative pump curve, and fault-response analysis.
 
@@ -126,6 +126,8 @@ This original figure is exploratory: some small-header / high-K cases can requir
 | 1 | 4.2610% | 73.592°C | 0.527°C |
 | 2 | 8.0391% | 73.738°C | 0.982°C |
 
+These historical reported values differ from current solver exports; the [documented comparison](docs/REPOSITORY_INTEGRATION.md#unresolved-fixed-flow-sensitivity-discrepancy) preserves both records pending reconciliation of the originating run/configuration. The nominal operating-point results below use an **idealized zero header local-loss coefficient**; actual junction behavior remains a validation need.
+
 Increasing K from 0 to 2 raised the peak by about **0.30°C**, while the spread approached **0.98°C**. This is a conditional nominal-flow result, not a universal statement that maldistribution is harmless.
 
 ## 5. Pump–tray operating point
@@ -161,27 +163,30 @@ The uneven-power and combined cases use seven 600 W devices and one 750 W device
 
 ## 7. Software / evidence organization
 
-The working project architecture discussed in the study is:
+The repository includes the implementation used for the component and system studies:
 
-```text
-component_rom/coldplate_rom.py
-network_solver/components/branch_hydraulics.py
-network_solver/network_model/n_branch_manifold.py
-network_solver/network_model/tray_thermal_coupling.py
-network_solver/network_model/pump_operating_point.py
-network_solver/network_model/fault_offdesign_analysis.py
-```
+- [Cold-plate ROM](../../component_rom/coldplate_rom.py)
+- [Branch tubing, QD and fitting hydraulics](../../network_solver/components/branch_hydraulics.py)
+- [N-branch manifold solver](../../network_solver/network_model/n_branch_manifold.py)
+- [Tray thermal coupling](../../network_solver/network_model/tray_thermal_coupling.py)
+- [Pump–tray operating point](../../network_solver/network_model/pump_operating_point.py)
+- [Fault and off-design analysis](../../network_solver/network_model/fault_offdesign_analysis.py)
 
-Those live model files are **not included or independently rerun in this documentation package**. It contains the case study, reported data, figures, source records, resume copy, and release checklist. The prior user-reported test count was 21 cold-plate tests and 25 total tests at that stage; it is not asserted to be the final integrated test-suite count.
+The [repository verification record](docs/REPOSITORY_INTEGRATION.md) reports the checks run against these source files, their scope, and unresolved data differences. The tables in this documentation retain their provenance as reported-result transcriptions or arithmetic reconstructions; the repository also retains the original available solver exports. Software checks do not rerun COMSOL or establish hardware validation.
 
-## Package navigation
+## Study navigation
 
 - [Case study PDF](portfolio/Project2_Case_Study.pdf) and [editable Word version](portfolio/Project2_Case_Study.docx)
-- [Selected projects and technical skills](portfolio/Selected_Projects_and_Skills.docx)
-- [Resume bullets and interview summary](docs/RESUME_AND_INTERVIEW.md)
 - [Figure order and captions](docs/FIGURE_GUIDE.md)
 - [Validation, assumptions and reporting limits](docs/VALIDATION_AND_LIMITATIONS.md)
-- [Release / repository integration checklist](docs/RELEASE_CHECKLIST.md)
+- [Repository verification and data consistency](docs/REPOSITORY_INTEGRATION.md)
 - [Source index](data/source_manifest.csv)
 
-Run the included documentation checks with `python scripts/check_package.py`. This checks the packaged tables and links; it does not execute the original engineering model. No CFD-runtime speedup, hardware test, vendor-qualified pump selection, full-tray CFD validation, or experimentally verified junction temperature is claimed.
+Run the checks from the repository root:
+
+```bash
+python -B -m pytest -p no:cacheprovider tests/
+python -B docs/portfolio/scripts/check_package.py
+```
+
+The tests cover the component ROM and branch hydraulics. The documentation checker verifies the tables, evidence and links. No CFD-runtime speedup, hardware test, vendor-qualified pump selection, full-tray CFD validation, or experimentally verified junction temperature is claimed.

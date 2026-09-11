@@ -1,33 +1,33 @@
-# Repository integration and verification 
+# Repository verification and data provenance
 
-## Bundle completeness follow-up 
+The repository contains the component ROM, eight-branch hydraulic/thermal model, reported CFD evidence, and pump/fault results for the 6 kW study. The root README remains the engineering overview. This record explains the checks that can be reproduced and the remaining data-provenance limits.
 
-The follow-up documentation branch is based on the newer `main` commit `1a2a6a3a0dcac2b7d38413fc3dc88379837929e8`. It preserves that expanded root README with corrected package-relative links, the repository-level check command, and source/validation context. The historical Day 1 README preservation described below applies to the original documentation commit `1f455218b8cd628fa344637f55ba1f99836c1715`; the owner subsequently replaced the root README on `main`.
+## Current repository checks — 2026-09-11
 
-All 46 files under the ZIP's `payload/docs/portfolio/` remain byte-for-byte unchanged, including both package navigation files and the 45-entry manifest. The five outer packaging files and the ZIP itself remain excluded as directed by the bundle. The 47 non-README files from the current main branch are unchanged. No simulation or data correction is part of this follow-up.
+From the repository root, use a Python environment with NumPy, SciPy, pandas, Matplotlib and pytest installed:
 
-The follow-up passed 46 ZIP-to-file comparisons, 45 original manifest hashes, all 91 relative links across the root README and portfolio Markdown, and 91 documentation-package checks. The available project suite was rerun in the same existing Python environment: **31 tests passed in 7.25 seconds, exit 0**, using `python -B -m pytest -p no:cacheprovider tests/`. The integration checks below describe the earlier run. Neither run represents a new CFD solve or hardware test.
+```bash
+python -B -m pytest -p no:cacheprovider tests/
+python -B docs/portfolio/scripts/check_package.py
+```
 
-This dated note records verification against the actual Project 2 source files. The original portfolio package is retained byte-for-byte as a historical snapshot of reported results. Statements in the original packaging checklist about unavailable repository access or tests not run describe that earlier packaging stage; current integration results are recorded here.
+The retained engineering suite passed **27 tests**: 21 component-ROM cases and six branch/manifold checks. Four tests belonging only to the retired Day 1 energy-balance example were removed with that example; current model tests and tolerances are unchanged. This run used the existing project environment: Python 3.14.0, pytest 9.1.1, NumPy 2.5.2, SciPy 1.18.1, pandas 3.0.5 and Matplotlib 3.11.1. It is not a clean-environment dependency-installation test.
 
-## Repository and preservation
+The documentation checker verifies source-file presence, links, reported tables, thermal margins, pump-power arithmetic and separation of the 1.15 L/min withheld point from calibration. `tests/ROM_fitting_workflow.py` preserves the seven fitting inputs; it is a standalone workflow rather than a collected regression test. No CFD solve, model refit, full-tray simulation rerun or hardware test was performed during this cleanup.
 
-The supplied local project had no Git repository or configured remote. With the owner's explicit authorization, a new private repository, `gaoyuaniris/project2-ai-server-liquid-cooling`, was created. A reviewed baseline contains 48 existing Project 2 source, test, documentation, figure, and CSV files. Every baseline file was checked against its original SHA-256 before committing. The documentation branch adds the portfolio and appends links to the root README. The source folder remains unchanged.
+The cleanup passed **101 documentation-package checks**, **80 Markdown link/anchor checks**, and **39 package-file hash checks**. A byte comparison against the starting commit also confirmed that all **58 retained README, model, test, data, figure and evidence files** are unchanged.
 
-The root README retains the original Day 1 4.8 kW / 600 W-per-device model. This portfolio describes the later 6.0 kW / 750 W-per-device study; these are different study baselines.
+## Retained evidence and file integrity
 
-Virtual environments, caches, ZIP archives, staging task files/reports, credentials, and unrelated files are excluded. No license, solver, model assumption, coefficient, original export, test, or tolerance was changed. The original 45-entry `MANIFEST.sha256` continues to verify the supplied package files; this integration note is an additional repository document outside that original manifest.
+The cleanup starts from main commit `3f96cc093bad398de571582e94aeada89ab568a3`. The root README, final model implementations, current tests, calibration/fault/operating-point data, source screenshots, figures, and Project 2 case-study documents are preserved byte-for-byte. The earlier 4.8 kW exercises, unused two/three-branch examples, development plans, and job-preparation materials are available in Git history rather than the current file tree.
 
-## Actual checks and scope
+[MANIFEST.sha256](../MANIFEST.sha256) records the current supporting-document package, including updated navigation and this verification note. It has been refreshed for the retained files; it no longer describes the original ZIP byte-for-byte. To verify it from the repository root:
 
-- The included documentation checker passed all 85 original package checks after integration and **91 checks in the final run**, including the six source links added in this note. These are documentation/evidence/arithmetic checks, not model validation.
-- The full available collected project suite passed: **31 tests passed in 7.82 seconds, exit 0**. This comprises 6 branch-hydraulics tests, 21 parametrized cold-plate ROM cases, and 4 Day 1 energy-balance tests.
-- Tests ran in the isolated repository copy using the original project's existing `.venv/bin/python`: `python -B -m pytest -p no:cacheprovider tests/`. Python 3.14.0; pytest 9.1.1; NumPy 2.5.2; SciPy 1.18.1; pandas 3.0.5; Matplotlib 3.11.1. Bytecode and pytest caches were disabled; Matplotlib and temporary caches were directed outside the repository.
-- The root README's historical unittest command alone does not collect the pytest function tests. Use pytest for the available complete test suite. No dependency manifest was present; the successful run used the existing local environment and does not establish clean-environment reproducibility.
-- Standalone simulation, fitting, and plotting workflows were not rerun. `tests/ROM_fitting_workflow.py` is a workflow script, not a collected test module. No new CFD solve or hardware experiment was performed.
-- The unchanged source baseline has 310 pre-existing whitespace findings under Git's default `diff --check` (exit 2), including CSV line endings and trailing blank/space lines. Those source bytes were preserved.
-- The full staged documentation `git diff --cached --check` exits 2 with 3,526 inherited formatting findings: 68 CRLF CSV lines and 3,458 SVG whitespace lines in the original bundle. They are retained to preserve the supplied files and all original manifest hashes. The deliberately authored root README addition and this integration note pass the same whitespace check (exit 0). These formatting findings are distinct from the successful package and engineering tests.
-- Both PDFs (three pages total), both DOCX documents (three rendered pages), 17 portfolio PNGs, and four portfolio SVGs passed integrity and visual review. Nine original project PNGs and the Day 1 architecture SVG also passed review. Focused text/metadata and visual privacy review found no credentials or sensitive content; author attribution is Yuan Gao. Some supplied evidence screenshots are cropped fragments, with ancillary lines cut at their edges; originals are retained.
+```bash
+python -c "import hashlib,pathlib; p=pathlib.Path('docs/portfolio'); rows=[line.split('  ',1) for line in (p/'MANIFEST.sha256').read_text().splitlines()]; assert all(hashlib.sha256((p/name).read_bytes()).hexdigest()==digest for digest,name in rows); print('Package hashes match')"
+```
+
+The [source index](../data/source_manifest.csv) retains the original Project 2 source identifiers. Its `original_sha256` column refers to the supplied originals, before any documented screenshot cropping; it is not a hash of the current packaged image. The Project 1-only entry E09 was removed without renumbering the remaining sources. Numerical source values and precision notes are unchanged.
 
 ## Unresolved fixed-flow sensitivity discrepancy
 
@@ -56,7 +56,9 @@ The [packaged fixed-flow table](../data/fixed_flow_sensitivity_reported.csv) agr
 
 At K=2, packaged maldistribution is higher by 0.207717 percentage points and peak estimated temperature by 0.008242 °C. Both records show eight branches in range and PASS under the adopted criteria. No artifact establishes which run/configuration is authoritative, and no cause or run date has been inferred. Both provenance records are retained without substitution, refitting, or regeneration. Reconcile against the originating run/configuration before treating the packaged fixed-flow values as the current model output.
 
-## Consistency that was verified
+## Reported-data consistency
+
+The following checks were recorded during source integration. The listed source files remain unchanged in this cleanup.
 
 - Four ROM coefficients and four input bounds match the current component source.
 - Seven calibration rows match the literal fitting inputs (21 values). The 1.15 L/min holdout remains absent from calibration.
@@ -78,4 +80,4 @@ The source hashes at review were:
 
 The [validation notes](VALIDATION_AND_LIMITATIONS.md) continue to apply. ROM-to-COMSOL agreement is not hardware validation. Pump/QD/fitting inputs are illustrative; estimated device temperatures include assumed package/TIM resistance. The 35 °C cases are constant-property sensitivity cases. The fixed 8.64 L/min target and 10% maldistribution limit are project criteria. The recorded 1.10 L/min thermal-resistance precision discrepancy (0.02600 versus 0.0260393 K/W) remains unresolved.
 
-No Candidate C COMSOL field export, complete COMSOL source model, or verified tray CAD/layout was available in the inspected project. None was fabricated or replaced by Project 1 imagery. Optional combined Projects and Skills documents and their Project 1 supporting evidence remain separate resume materials; they are not Project 2 model results. The [evidence index](../data/source_manifest.csv) retains the distinction between screenshot transcriptions and original solver exports.
+No Candidate C COMSOL field export, complete COMSOL source model, or verified tray CAD/layout is included. The architecture schematic illustrates the model, not a released mechanical layout. The [evidence index](../data/source_manifest.csv) distinguishes screenshot transcriptions from original solver exports.

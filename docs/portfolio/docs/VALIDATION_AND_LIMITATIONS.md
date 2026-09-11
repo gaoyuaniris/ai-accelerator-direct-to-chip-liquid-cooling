@@ -6,7 +6,7 @@
 |---|---|---|
 | Reported component CFD | Candidate C flow results and the withheld 1.15 L/min comparison | Hardware agreement or all mesh settings independently inspected here |
 | CFD-derived ROM | Reported seven-point fit and off-grid comparison; clear input/output definitions | Guaranteed accuracy everywhere in a multidimensional rectangular envelope |
-| Python consistency | User-reported component tests and solver outputs | A new final end-to-end test run during documentation preparation |
+| Python consistency | Component ROM and branch/manifold regression tests; recorded solver outputs | Full-tray experimental validation or a reproduced CFD study |
 | Tray system | Reported flow/temperature/pump/fault predictions under the stated assumptions | A physically built or CFD-qualified complete tray |
 | 35°C inlet cases | Fixed-property sensitivity results | Validation of material/property behavior at 35°C |
 
@@ -36,7 +36,7 @@ The 1.15 L/min comparison uses the reported coefficient values and the thermal c
 
 ## Recommended next validation gates—not completed claims
 
-1. Rerun the final integrated repository tests and retain a dated result; do not reuse the old 25-test count as the final total.
+1. Maintain the component and branch/manifold regression suite as the model changes. The current test scope and run are recorded in [repository verification](REPOSITORY_INTEGRATION.md).
 2. Replace source transcriptions with raw CSV exports and keep the withheld 1.15 L/min point out of calibration.
 3. Add vendor QD/pump data and a complete loop pressure budget before selecting hardware.
 4. Validate selected manifold / junction cases with independent CFD or experiment.

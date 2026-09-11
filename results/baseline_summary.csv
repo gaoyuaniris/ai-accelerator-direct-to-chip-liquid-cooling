@@ -1,6 +1,0 @@
-quantity,value,unit
-Total heat load,4800.000,W
-Required mass flow,0.114833,kg/s
-Required volume flow,6.910684,L/min
-Ideal branch flow,0.863836,L/min
-Expected TCS return,40.000,degC

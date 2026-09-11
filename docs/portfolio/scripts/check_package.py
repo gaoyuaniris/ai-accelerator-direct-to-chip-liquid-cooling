@@ -62,7 +62,7 @@ require(float(val[1]['relative_error_percent']) < .3, 'Thermal resistance valida
 for stem in ['01_hydraulic_rom','02_thermal_rom','03_header_local_loss_sensitivity','04_pump_tray_operating_point','05_fault_temperature','06_fault_maldistribution']:
     require((ROOT/'figures'/f'{stem}.png').is_file(), f'Missing figure: {stem}')
 
-for filename in ['Project2_Case_Study.pdf','Project2_Case_Study.docx','Selected_Projects_and_Skills.docx']:
+for filename in ['Project2_Case_Study.pdf','Project2_Case_Study.docx']:
     require((ROOT/'portfolio'/filename).is_file(), f'Missing portfolio file: {filename}')
 
 print(f'PASS: {checks} documentation-package checks.')

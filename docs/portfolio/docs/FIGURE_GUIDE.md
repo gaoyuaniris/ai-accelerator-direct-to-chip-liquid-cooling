@@ -11,12 +11,12 @@ The package includes six figures. F01/F02/F05/F06 are new plots of supplied nume
 | F05 | `../figures/05_fault_temperature.png` (+ SVG) | Estimated peak device temperature for six reported scenarios; all remain below the 85°C project criterion under the stated model assumptions. Asterisks identify 35°C inlet sensitivity cases. E01/E10. |
 | F06 | `../figures/06_fault_maldistribution.png` (+ SVG) | Restricted-branch and combined-stress cases exceed the adopted 10% uniformity criterion despite remaining below the temperature limit. E01. |
 
-## Requested visuals that are not available as Project 2 source artifacts
+## Geometry-visualization scope
 
-A clean final Candidate C COMSOL temperature-field export and a verified tray CAD/layout drawing were not available in the accessible Project 2 attachments. No substitute from Project 1 was used. The README therefore uses a textual model workflow rather than implying that a new physical tray drawing was validated.
+A clean final Candidate C COMSOL temperature-field export and a verified tray CAD/layout drawing are not included. The [system architecture schematic](../../../figures/system_architecture.svg) illustrates the model boundary and components; it is not a verified mechanical layout.
 
-When those assets are available, lead with the Candidate C field and the same-side manifold schematic, then retain the ROM, header, pump, and fault evidence as the narrative. Replace the screenshot-derived F03/F04 with their original figure exports when practical; do not digitize approximate curve points and call them original data.
+The ROM, header, pump and fault figures document the available numerical evidence. F03/F04 are screenshot-derived plots; the source index records their origin.
 
-## Public-release housekeeping
+## Source precision
 
-Selected terminal evidence images are cropped to remove local save paths where possible. Review all evidence files before publishing. The chart source CSVs and source manifest retain their precision and provenance notes. Do not remove those notes to make the evidence look more complete than it is.
+Selected terminal evidence images were cropped during the original preparation. The chart CSVs and source manifest distinguish reported values from full-precision model exports. Source-image hashes describe the supplied originals; `MANIFEST.sha256` records the current packaged files.

@@ -1,9 +1,11 @@
-# Project 2 portfolio package
+# Project 2 engineering evidence
 
-Start with [the two-page case study](portfolio/Project2_Case_Study.pdf), then review [README.md](README.md) for the engineering narrative.
+Start with the [project overview](../../README.md) or [two-page case study](portfolio/Project2_Case_Study.pdf).
 
-Use [Selected Projects & Technical Skills](portfolio/Selected_Projects_and_Skills.docx) as an editable insert for a resume; it includes both projects. Its Project 1 results were checked against the supplied final Project 1 package.
+- [Detailed study](README.md): component CFD, reduced-order models, manifold sizing and fault results.
+- [Figure guide](docs/FIGURE_GUIDE.md): the six result figures and their evidence boundaries.
+- [Validation and limitations](docs/VALIDATION_AND_LIMITATIONS.md): assumptions and supported claims.
+- [Repository verification](docs/REPOSITORY_INTEGRATION.md): software checks and data consistency.
+- [Source index](data/source_manifest.csv): records behind the reported tables and figures.
 
-The [figure guide](docs/FIGURE_GUIDE.md) explains the six included figures and identifies missing final CFD/CAD visuals. The [release checklist](docs/RELEASE_CHECKLIST.md) separates completed documentation from checks still needed in the live repository.
-
-This package does not modify the local project or publish to GitHub. Numerical CSVs are clearly identified as transcriptions or arithmetic reconstructions of supplied evidence, not original solver exports.
+The documentation distinguishes reported-result transcriptions and arithmetic reconstructions from the original solver exports retained elsewhere in the repository.
