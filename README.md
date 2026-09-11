@@ -18,7 +18,7 @@ A system-level thermal–hydraulic design study connecting **cold-plate CFD**, c
 | Estimated peak device temperature | **72.72°C** |
 | Margin to 85°C project criterion | **12.28°C** |
 
-[Portfolio overview](docs/portfolio/README.md) · [Validation notes](docs/portfolio/docs/VALIDATION_AND_LIMITATIONS.md) · [Repository validation](docs/portfolio/docs/REPOSITORY_INTEGRATION.md)
+[Methods and sources](docs/methods.md) · [Validation notes](docs/validation.md) · [Repository validation](docs/verification.md)
 
 The operating point is a **model prediction for an illustrative pump coupled to the tray**, not a measured pump/CDU qualification result.
 
@@ -67,9 +67,9 @@ R_{\theta,\max} = \frac{T_{\mathrm{base},\max} - (T_{\mathrm{in}} + T_{\mathrm{o
 
 | Hydraulic ROM | Thermal ROM |
 |---|---|
-| ![Cold-plate pressure-drop fit](docs/portfolio/figures/01_hydraulic_rom.png) | ![Cold-plate thermal-resistance fit](docs/portfolio/figures/02_thermal_rom.png) |
+| ![Cold-plate pressure-drop fit](figures/01_hydraulic_rom.png) | ![Cold-plate thermal-resistance fit](figures/02_thermal_rom.png) |
 
-Reported calibration mean / maximum absolute percentage errors are **0.0676% / 0.2093%** for pressure drop and **0.2753% / 0.4738%** for thermal resistance. The plots use reported coefficients and rounded calibration inputs; detailed [fit records and sources](docs/portfolio/README.md#3-cfd-derived-component-rom) are retained in the portfolio documentation.
+Reported calibration mean / maximum absolute percentage errors are **0.0676% / 0.2093%** for pressure drop and **0.2753% / 0.4738%** for thermal resistance. The plots use reported coefficients and rounded calibration inputs; detailed [fit records and sources](docs/methods.md#cfd-calibration-and-fit-records) are retained in the methods documentation.
 
 ### Withheld CFD comparison
 
@@ -96,7 +96,7 @@ M_{\mathrm{flow}} = 100\,\frac{\dot V_{\max} - \dot V_{\min}}{\overline{\dot V}}
 
 ### Decision: retain a provisional 19.05 mm header
 
-The [diameter / local-loss study](docs/portfolio/figures/03_header_local_loss_sensitivity.png) compared **12.7, 15.0, 19.05, and 25.4 mm** IDs. Smaller headers were more sensitive to local losses; **19.05 mm** was retained as the modeling baseline. It is not a demonstrated global optimum or a released mechanical design. Some exploratory small-header cases exceed the ROM flow range.
+The [diameter / local-loss study](figures/03_header_local_loss_sensitivity.png) compared **12.7, 15.0, 19.05, and 25.4 mm** IDs. Smaller headers were more sensitive to local losses; **19.05 mm** was retained as the modeling baseline. It is not a demonstrated global optimum or a released mechanical design. Some exploratory small-header cases exceed the ROM flow range.
 
 At 19.05 mm and fixed **8.64 L/min**, the reported sensitivity cases kept all eight branches in the 0.50–1.20 L/min range:
 
@@ -106,13 +106,13 @@ At 19.05 mm and fixed **8.64 L/min**, the reported sensitivity cases kept all ei
 | 1 | 4.2610% | 73.592°C | 0.527°C |
 | 2 | 8.0391% | 73.738°C | 0.982°C |
 
-These historical reported values differ from current solver exports; the [documented comparison](docs/portfolio/docs/REPOSITORY_INTEGRATION.md#unresolved-fixed-flow-sensitivity-discrepancy) preserves both records pending reconciliation of the originating run/configuration. The nominal operating-point results below use an **idealized zero header local-loss coefficient**; actual junction behavior remains a validation need.
+These historical reported values differ from current solver exports; the [documented comparison](docs/verification.md#unresolved-fixed-flow-sensitivity-discrepancy) preserves both records pending reconciliation of the originating run/configuration. The nominal operating-point results below use an **idealized zero header local-loss coefficient**; actual junction behavior remains a validation need.
 
 ### Pump–tray operating point
 
 Intersecting the illustrative pump curve with the tray pressure requirement gives **9.1604 L/min at 11.4374 kPa**, a **6.02% flow margin** over the 8.64 L/min target.
 
-![Illustrative pump curve and tray operating point](docs/portfolio/figures/04_pump_tray_operating_point.png)
+![Illustrative pump curve and tray operating point](figures/04_pump_tray_operating_point.png)
 
 Hydraulic power is **1.7462 W**; at an assumed **50% efficiency**, estimated electrical power is **3.4924 W**. This covers the S1-to-R1 tray load only. Common lines, CDU heat exchanger/filter losses, and facility plumbing are outside the pressure budget.
 
@@ -129,20 +129,20 @@ Hydraulic power is **1.7462 W**; at an assumed **50% efficiency**, estimated ele
 
 *The 35°C inlet cases are constant-property temperature sensitivities, not independently CFD-validated inlet conditions. Uneven-power and combined cases use seven 600 W devices plus one 750 W device (**4.95 kW**) while retaining the fixed **8.64 L/min** design target.
 
-![Flow maldistribution across six modeled scenarios](docs/portfolio/figures/06_fault_maldistribution.png)
+![Flow maldistribution across six modeled scenarios](figures/06_fault_maldistribution.png)
 
 **Engineering implication:** a 1.30× multiplier on one branch's hydraulic characteristic produces **18.323% maldistribution** while estimated peak device temperature remains **75.05°C**. This represents increased branch resistance, not 30% blocked channel area or internal blockage heat-transfer effects. Reduced pump capability also violates the fixed flow target. Both need attention even with temperature margin; these results do not establish a fault-qualified tray.
 
 ## Review the evidence and run the checks
 
-- [Two-page case study](docs/portfolio/portfolio/Project2_Case_Study.pdf) — concise engineering narrative.
-- [Portfolio details](docs/portfolio/README.md), [validation and limitations](docs/portfolio/docs/VALIDATION_AND_LIMITATIONS.md) — assumptions, reported data, and evidence traceability.
+- [Two-page case study](docs/case-study.pdf) — concise engineering narrative.
+- [Methods and sources](docs/methods.md), [validation and limitations](docs/validation.md) — assumptions, reported data, and evidence traceability.
 - [Component ROM](component_rom/coldplate_rom.py), [manifold solver](network_solver/network_model/n_branch_manifold.py), and [fault analysis](network_solver/network_model/fault_offdesign_analysis.py) — implementation.
-- [Repository verification](docs/portfolio/docs/REPOSITORY_INTEGRATION.md) — test scope, data consistency, and unresolved discrepancies.
+- [Repository verification](docs/verification.md) — test scope, data consistency, and unresolved discrepancies.
 
 From the repository root, in a Python environment with the model and test dependencies installed:
 
 ```bash
 python -B -m pytest -p no:cacheprovider tests/
-python -B docs/portfolio/scripts/check_package.py
+python -B scripts/check_evidence.py
 ```
