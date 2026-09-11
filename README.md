@@ -1,4 +1,4 @@
-# Thermal–Hydraulic Co-Design of an AI Accelerator Cooling Tray
+# System Level Direct to Chip Liquid Cooling for an AI Accelerator Tray
 
 **8-accelerator · 6 kW direct-to-chip liquid cooling · Python / COMSOL / reduced-order modeling**
 
